@@ -1,18 +1,31 @@
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.env
 *.log
 *.db
+venv/
+
+# Editor / IDE
 .vscode/
-docker-compose.override.yml
 *.iml
 *.DS_Store
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars
+
+# Docker / Build artifacts
 *.tar
 *.img
+docker-compose.override.yml
+
+# AWS / Keys / Tokens / Large binaries
 *.key
 *.pem
 *.token
-aws/dist/awscli/examples/
 awscliv2.zip
-.terraform/
+aws/dist/
