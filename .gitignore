@@ -10,7 +10,9 @@ venv/
 # Editor / IDE
 .vscode/
 *.iml
-*.DS_Store
+*.idea/
+*.sublime-workspace
+*.sublime-project
 
 # Terraform
 .terraform/
@@ -29,3 +31,9 @@ docker-compose.override.yml
 *.token
 awscliv2.zip
 aws/dist/
+
+# Kubernetes
+.kube/
+*.kubeconfig
+*.yaml~ 
+*.yml~ 
