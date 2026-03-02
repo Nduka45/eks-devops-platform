@@ -6,7 +6,7 @@ This project demonstrates a **full DevOps workflow**:
 - Flask microservice development
 - Docker containerization
 - Kubernetes deployment
-- Terraform for AWS infrastructure (optional)
+- Terraform for AWS infrastructure
 
 The goal is to showcase a **production-ready deployment workflow** using modern DevOps practices.
 
@@ -18,8 +18,8 @@ The goal is to showcase a **production-ready deployment workflow** using modern 
   - `/health` : Returns service health status
 - Dockerized application
 - Kubernetes Deployment and Service
-- Terraform scripts for infrastructure provisioning (optional)
-- CI/CD readiness (ready to integrate with GitHub Actions, Jenkins, etc.)
+- Terraform scripts for infrastructure provisioning
+- CI/CD readiness (ready to integrate with GitHub Actions, Jenkins, etc)
 
 ---
 
