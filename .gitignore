@@ -10,5 +10,9 @@ docker-compose.override.yml
 *.DS_Store
 *.tar
 *.img
+*.key
+*.pem
+*.token
+aws/dist/awscli/examples/
 awscliv2.zip
 .terraform/
