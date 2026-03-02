@@ -1,8 +1,43 @@
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
+}
+
+resource "random_id" "bucket_id" {
+  byte_length = 4
 }
 
 resource "aws_s3_bucket" "my_bucket" {
-  bucket = "my-unique-bucket-name-12345"
-  acl    = "private"
+  bucket = "michael-devops-${random_id.bucket_id.hex}"
+
+  tags = {
+    Name        = "DevOpsBucket"
+    Environment = "Dev"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "versioning" {
+  bucket = aws_s3_bucket.my_bucket.id
+
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "encryption" {
+  bucket = aws_s3_bucket.my_bucket.id
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm = "AES256"
+    }
+  }
+}
+
+resource "aws_s3_bucket_public_access_block" "block_public" {
+  bucket = aws_s3_bucket.my_bucket.id
+
+  block_public_acls       = true
+  block_public_policy     = true
+  ignore_public_acls      = true
+  restrict_public_buckets = true
 }

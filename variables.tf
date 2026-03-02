@@ -4,8 +4,8 @@ variable "aws_region" {
   default     = "us-east-1"
 }
 
-variable "s3_bucket_name" {
-  description = "Name of the S3 bucket to create"
+variable "bucket_prefix" {
+  description = "Prefix for the S3 bucket name"
   type        = string
-  default     = "michael-devops-lab-2026-001"
+  default     = "michael-devops"
 }
